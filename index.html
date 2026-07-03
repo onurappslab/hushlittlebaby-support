@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hushling — Baby Sleep Sounds</title>
-    <meta name="description" content="Soothing sleep sounds for your baby. Mix, customize, and create the perfect sleep environment.">
+    <title>Hushling — Bebek Uyku Sesleri</title>
+    <meta name="description" content="Bebeğiniz için yatıştırıcı uyku sesleri. Sesleri karıştırın, özelleştirin ve mükemmel uyku ortamını oluşturun.">
     <meta name="theme-color" content="#0B0E14">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,6 +28,37 @@
             color: var(--pure-white);
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        /* Language toggle */
+        .lang-toggle {
+            position: fixed;
+            top: 16px; right: 16px;
+            z-index: 10;
+            display: flex;
+            gap: 4px;
+            background: rgba(31,35,40,0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(212,165,116,0.15);
+            border-radius: 100px;
+            padding: 4px;
+        }
+        .lang-toggle button {
+            background: transparent;
+            border: none;
+            color: rgba(232,232,232,0.6);
+            font: inherit;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 6px 14px;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .lang-toggle button.active {
+            background: var(--amber);
+            color: var(--deep-black);
         }
 
         /* Animated background */
@@ -324,6 +355,12 @@
 </head>
 <body>
 
+<!-- Language toggle -->
+<div class="lang-toggle">
+    <button data-lang="tr" onclick="setLang('tr')">TR</button>
+    <button data-lang="en" onclick="setLang('en')">EN</button>
+</div>
+
 <!-- Animated background -->
 <div class="bg-glow">
     <div class="orb orb-1"></div>
@@ -337,10 +374,12 @@
     <section class="hero">
         <img src="icon.png" alt="Hushling" class="hero-icon">
         <h1>Hushling</h1>
-        <p class="subtitle">Soothing sleep sounds for your baby. Mix, customize, and create the perfect sleep environment.</p>
+        <p class="subtitle"
+           data-tr="Bebeğiniz için yatıştırıcı uyku sesleri. Sesleri karıştırın, özelleştirin ve mükemmel uyku ortamını oluşturun."
+           data-en="Soothing sleep sounds for your baby. Mix, customize, and create the perfect sleep environment.">Bebeğiniz için yatıştırıcı uyku sesleri. Sesleri karıştırın, özelleştirin ve mükemmel uyku ortamını oluşturun.</p>
         <a href="https://apps.apple.com/app/id6760547503" class="cta-button">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
-            Download on the App Store
+            <span data-tr="App Store'dan İndir" data-en="Download on the App Store">App Store'dan İndir</span>
         </a>
         <div class="scroll-hint">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
@@ -349,83 +388,102 @@
 
     <!-- Features -->
     <section class="features">
-        <h2 class="section-title">Everything Your Baby Needs to Sleep</h2>
+        <h2 class="section-title"
+            data-tr="Bebeğinizin Uykusu İçin Her Şey"
+            data-en="Everything Your Baby Needs to Sleep">Bebeğinizin Uykusu İçin Her Şey</h2>
         <div class="features-grid">
             <div class="feature-card">
                 <div class="feature-icon">🎵</div>
-                <h3>18 Soothing Sounds</h3>
-                <p>From rain and ocean to white noise and heartbeat. Carefully curated sounds proven to calm babies.</p>
+                <h3 data-tr="22 Yatıştırıcı Ses" data-en="22 Soothing Sounds">22 Yatıştırıcı Ses</h3>
+                <p data-tr="Yağmur, okyanus ve şömineden beyaz gürültü, kuş sesleri ve kalp atışına kadar. Bebekleri sakinleştirdiği bilinen özenle seçilmiş sesler."
+                   data-en="From rain, ocean and fireplace to white noise, birdsong and heartbeat. Carefully curated sounds proven to calm babies.">Yağmur, okyanus ve şömineden beyaz gürültü, kuş sesleri ve kalp atışına kadar. Bebekleri sakinleştirdiği bilinen özenle seçilmiş sesler.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🎚️</div>
-                <h3>Custom Mixes</h3>
-                <p>Blend multiple sounds together with individual volume control. Save your perfect mix and replay instantly.</p>
+                <h3 data-tr="Özel Mixler" data-en="Custom Mixes">Özel Mixler</h3>
+                <p data-tr="Birden fazla sesi ayrı ses seviyesi kontrolüyle birleştirin. Mükemmel mixinizi kaydedin ve anında tekrar çalın."
+                   data-en="Blend multiple sounds together with individual volume control. Save your perfect mix and replay instantly.">Birden fazla sesi ayrı ses seviyesi kontrolüyle birleştirin. Mükemmel mixinizi kaydedin ve anında tekrar çalın.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎹</div>
+                <h3 data-tr="Ninni Stüdyosu" data-en="Lullaby Studio">Ninni Stüdyosu</h3>
+                <p data-tr="Klasik, telifsiz ninnilerin yanı sıra her seferinde farklı çalan sonsuz bir üretken ninni."
+                   data-en="Classic public-domain lullabies plus an endless generative lullaby that never plays the same way twice.">Klasik, telifsiz ninnilerin yanı sıra her seferinde farklı çalan sonsuz bir üretken ninni.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">⏱️</div>
-                <h3>Smart Timer</h3>
-                <p>Set a sleep timer from 1 to 60 minutes. Sounds gently fade out so your baby stays asleep.</p>
+                <h3 data-tr="Akıllı Zamanlayıcı" data-en="Smart Timer">Akıllı Zamanlayıcı</h3>
+                <p data-tr="1 ile 60 dakika arası uyku zamanlayıcısı kurun. Sesler yumuşakça kısılır, böylece bebeğiniz uykuda kalır."
+                   data-en="Set a sleep timer from 1 to 60 minutes. Sounds gently fade out so your baby stays asleep.">1 ile 60 dakika arası uyku zamanlayıcısı kurun. Sesler yumuşakça kısılır, böylece bebeğiniz uykuda kalır.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🔒</div>
-                <h3>No Ads. No Tracking.</h3>
-                <p>Zero data collection. No analytics. No ads. Just a safe, private app for your family.</p>
+                <h3 data-tr="Reklam Yok. Takip Yok." data-en="No Ads. No Tracking.">Reklam Yok. Takip Yok.</h3>
+                <p data-tr="Sıfır veri toplama. Analitik yok. Reklam yok. Sadece aileniz için güvenli, gizli bir uygulama."
+                   data-en="Zero data collection. No analytics. No ads. Just a safe, private app for your family.">Sıfır veri toplama. Analitik yok. Reklam yok. Sadece aileniz için güvenli, gizli bir uygulama.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🌙</div>
-                <h3>Sleep-Optimized Design</h3>
-                <p>Warm amber tones with zero blue light. Auto night mode dims further after 8 PM to protect melatonin.</p>
+                <h3 data-tr="Uykuya Uygun Tasarım" data-en="Sleep-Optimized Design">Uykuya Uygun Tasarım</h3>
+                <p data-tr="Sıfır mavi ışıklı sıcak amber tonları. Otomatik gece modu 20:00'den sonra ekranı daha da kısarak melatonini korur."
+                   data-en="Warm amber tones with zero blue light. Auto night mode dims further after 8 PM to protect melatonin.">Sıfır mavi ışıklı sıcak amber tonları. Otomatik gece modu 20:00'den sonra ekranı daha da kısarak melatonini korur.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">🔋</div>
-                <h3>Battery Friendly</h3>
-                <p>Intelligent idle mode reduces CPU by 70% during playback. Play all night without draining your battery.</p>
+                <h3 data-tr="Pil Dostu" data-en="Battery Friendly">Pil Dostu</h3>
+                <p data-tr="Akıllı boşta mod, çalma sırasında CPU kullanımını %70 azaltır. Pilinizi tüketmeden bütün gece çalın."
+                   data-en="Intelligent idle mode reduces CPU by 70% during playback. Play all night without draining your battery.">Akıllı boşta mod, çalma sırasında CPU kullanımını %70 azaltır. Pilinizi tüketmeden bütün gece çalın.</p>
             </div>
         </div>
     </section>
 
     <!-- Sound showcase -->
     <section class="sounds">
-        <h2 class="section-title">A Sound for Every Baby</h2>
+        <h2 class="section-title" data-tr="Her Bebeğe Bir Ses" data-en="A Sound for Every Baby">Her Bebeğe Bir Ses</h2>
         <div class="sound-pills">
-            <span class="sound-pill"><span class="emoji">🌧️</span> Rain</span>
-            <span class="sound-pill"><span class="emoji">🌊</span> Ocean</span>
-            <span class="sound-pill"><span class="emoji">📻</span> White Noise</span>
-            <span class="sound-pill"><span class="emoji">🌲</span> Forest</span>
-            <span class="sound-pill"><span class="emoji">💓</span> Heartbeat</span>
-            <span class="sound-pill"><span class="emoji">🧹</span> Vacuum</span>
-            <span class="sound-pill"><span class="emoji">🎚️</span> Pink Noise</span>
-            <span class="sound-pill"><span class="emoji">🌀</span> Fan</span>
-            <span class="sound-pill"><span class="emoji">⛈️</span> Thunder</span>
-            <span class="sound-pill"><span class="emoji">🤫</span> Shush</span>
-            <span class="sound-pill"><span class="emoji">💧</span> Creek</span>
-            <span class="sound-pill"><span class="emoji">🦗</span> Crickets</span>
-            <span class="sound-pill premium"><span class="emoji">🎛️</span> Brown Noise</span>
-            <span class="sound-pill premium"><span class="emoji">🫧</span> Washing Machine</span>
-            <span class="sound-pill premium"><span class="emoji">🤰</span> Womb</span>
-            <span class="sound-pill premium"><span class="emoji">🎶</span> Music Box</span>
-            <span class="sound-pill premium"><span class="emoji">🐱</span> Cat Purr</span>
-            <span class="sound-pill premium"><span class="emoji">🚗</span> Car Ride</span>
+            <span class="sound-pill"><span class="emoji">🌧️</span> <span data-tr="Yağmur" data-en="Rain">Yağmur</span></span>
+            <span class="sound-pill"><span class="emoji">⛈️</span> <span data-tr="Gök Gürültüsü" data-en="Thunder">Gök Gürültüsü</span></span>
+            <span class="sound-pill"><span class="emoji">🌊</span> <span data-tr="Okyanus" data-en="Ocean">Okyanus</span></span>
+            <span class="sound-pill"><span class="emoji">💧</span> <span data-tr="Dere" data-en="Creek">Dere</span></span>
+            <span class="sound-pill"><span class="emoji">💦</span> <span data-tr="Şelale" data-en="Waterfall">Şelale</span></span>
+            <span class="sound-pill"><span class="emoji">🌲</span> <span data-tr="Orman" data-en="Forest">Orman</span></span>
+            <span class="sound-pill"><span class="emoji">🐦</span> <span data-tr="Kuş Sesleri" data-en="Birds">Kuş Sesleri</span></span>
+            <span class="sound-pill"><span class="emoji">🦗</span> <span data-tr="Cırcır Böceği" data-en="Crickets">Cırcır Böceği</span></span>
+            <span class="sound-pill"><span class="emoji">🔥</span> <span data-tr="Şömine" data-en="Fireplace">Şömine</span></span>
+            <span class="sound-pill"><span class="emoji">📻</span> <span data-tr="Beyaz Gürültü" data-en="White Noise">Beyaz Gürültü</span></span>
+            <span class="sound-pill"><span class="emoji">🎚️</span> <span data-tr="Pembe Gürültü" data-en="Pink Noise">Pembe Gürültü</span></span>
+            <span class="sound-pill"><span class="emoji">🌀</span> <span data-tr="Vantilatör" data-en="Fan">Vantilatör</span></span>
+            <span class="sound-pill"><span class="emoji">🧹</span> <span data-tr="Elektrik Süpürgesi" data-en="Vacuum">Elektrik Süpürgesi</span></span>
+            <span class="sound-pill"><span class="emoji">💨</span> <span data-tr="Saç Kurutma Makinesi" data-en="Hair Dryer">Saç Kurutma Makinesi</span></span>
+            <span class="sound-pill"><span class="emoji">💓</span> <span data-tr="Kalp Atışı" data-en="Heartbeat">Kalp Atışı</span></span>
+            <span class="sound-pill"><span class="emoji">🤫</span> <span data-tr="Şşş" data-en="Shush">Şşş</span></span>
+            <span class="sound-pill premium"><span class="emoji">🎛️</span> <span data-tr="Kahverengi Gürültü" data-en="Brown Noise">Kahverengi Gürültü</span></span>
+            <span class="sound-pill premium"><span class="emoji">🫧</span> <span data-tr="Çamaşır Makinesi" data-en="Washing Machine">Çamaşır Makinesi</span></span>
+            <span class="sound-pill premium"><span class="emoji">🚗</span> <span data-tr="Araba Yolculuğu" data-en="Car Ride">Araba Yolculuğu</span></span>
+            <span class="sound-pill premium"><span class="emoji">🤰</span> <span data-tr="Rahim" data-en="Womb">Rahim</span></span>
+            <span class="sound-pill premium"><span class="emoji">🐱</span> <span data-tr="Kedi Mırıltısı" data-en="Cat Purr">Kedi Mırıltısı</span></span>
+            <span class="sound-pill premium"><span class="emoji">🎶</span> <span data-tr="Müzik Kutusu" data-en="Music Box">Müzik Kutusu</span></span>
         </div>
     </section>
 
     <!-- Sleep science -->
     <section class="science">
         <div class="science-card">
-            <h2>Designed for Better Sleep</h2>
-            <p>Every detail is crafted with your baby's sleep in mind — from the blue-light-free color palette to the scientifically selected sound frequencies.</p>
+            <h2 data-tr="Daha İyi Uyku İçin Tasarlandı" data-en="Designed for Better Sleep">Daha İyi Uyku İçin Tasarlandı</h2>
+            <p data-tr="Her detay bebeğinizin uykusu düşünülerek tasarlandı — mavi ışıksız renk paletinden bilimsel olarak seçilmiş ses frekanslarına kadar."
+               data-en="Every detail is crafted with your baby's sleep in mind — from the blue-light-free color palette to the scientifically selected sound frequencies.">Her detay bebeğinizin uykusu düşünülerek tasarlandı — mavi ışıksız renk paletinden bilimsel olarak seçilmiş ses frekanslarına kadar.</p>
             <div class="science-stats">
                 <div class="stat">
                     <div class="number">0</div>
-                    <div class="label">Blue Light</div>
+                    <div class="label" data-tr="Mavi Işık" data-en="Blue Light">Mavi Işık</div>
                 </div>
                 <div class="stat">
-                    <div class="number">18</div>
-                    <div class="label">Sleep Sounds</div>
+                    <div class="number">22</div>
+                    <div class="label" data-tr="Uyku Sesi" data-en="Sleep Sounds">Uyku Sesi</div>
                 </div>
                 <div class="stat">
                     <div class="number">70%</div>
-                    <div class="label">Less Battery Use</div>
+                    <div class="label" data-tr="Daha Az Pil" data-en="Less Battery Use">Daha Az Pil</div>
                 </div>
             </div>
         </div>
@@ -434,13 +492,38 @@
     <!-- Footer -->
     <footer>
         <div class="footer-links">
-            <a href="https://hushlittlebabysupport.github.io/hushlittlebaby-privacy/">Privacy Policy</a>
-            <a href="mailto:onurappslab@gmail.com">Support</a>
+            <a href="https://hushlittlebabysupport.github.io/hushlittlebaby-privacy/" data-tr="Gizlilik Politikası" data-en="Privacy Policy">Gizlilik Politikası</a>
+            <a href="mailto:onurappslab@gmail.com" data-tr="Destek" data-en="Support">Destek</a>
         </div>
-        <p class="copyright">&copy; 2026 Hushling. All rights reserved.</p>
+        <p class="copyright"
+           data-tr="© 2026 Hushling. Tüm hakları saklıdır."
+           data-en="© 2026 Hushling. All rights reserved.">© 2026 Hushling. Tüm hakları saklıdır.</p>
     </footer>
 
 </div>
+
+<script>
+    function setLang(l) {
+        document.documentElement.lang = l;
+        document.querySelectorAll('[data-' + l + ']').forEach(function (el) {
+            el.textContent = el.getAttribute('data-' + l);
+        });
+        document.title = (l === 'tr') ? 'Hushling — Bebek Uyku Sesleri' : 'Hushling — Baby Sleep Sounds';
+        document.querySelectorAll('.lang-toggle button').forEach(function (b) {
+            b.classList.toggle('active', b.getAttribute('data-lang') === l);
+        });
+        try { localStorage.setItem('hushling-lang', l); } catch (e) {}
+    }
+    (function () {
+        var saved;
+        try { saved = localStorage.getItem('hushling-lang'); } catch (e) {}
+        if (!saved) {
+            var nav = (navigator.language || 'tr').toLowerCase();
+            saved = nav.indexOf('tr') === 0 ? 'tr' : 'en';
+        }
+        setLang(saved);
+    })();
+</script>
 
 </body>
 </html>
